@@ -4,10 +4,9 @@ services:
     image: mysql:8
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: my_database
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
       - '3306:3306'
     volumes:
@@ -24,7 +23,7 @@ services:
       dockerfile: Dockerfile
     container_name: nestjs-app
     ports:
-      - "3000:3000"
+      - "3001:3001"
     depends_on:
       mysql:
         condition: service_healthy
