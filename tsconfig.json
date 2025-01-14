@@ -4,6 +4,7 @@
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true, // import * as React form 'react' 생략 가능
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "ES2021",
